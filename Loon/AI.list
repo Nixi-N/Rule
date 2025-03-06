@@ -1,5 +1,5 @@
-# 2025-03-07
-
+# 规则名称 AI
+# 规则统计 54
 # OpenAI ChatGPT
 AND, ((DOMAIN-KEYWORD, chatgpt-async-webps-prod-eastus-), (DOMAIN-SUFFIX, webpubsub.azure.com))
 AND, ((DOMAIN-KEYWORD, openaicom-api-), (DOMAIN-SUFFIX, azurefd.net))
