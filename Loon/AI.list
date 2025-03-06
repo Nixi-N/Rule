@@ -1,7 +1,4 @@
-# 2025-02-28 22:20:30
-
-# https://kelee.one/Tool/Loon/Rule/AI.list
-# https://raw.githubusercontent.com/ConnersHua/RuleGo/master/Surge/Ruleset/Extra/AI.list
+# 2025-03-07
 
 # OpenAI ChatGPT
 AND, ((DOMAIN-KEYWORD, chatgpt-async-webps-prod-eastus-), (DOMAIN-SUFFIX, webpubsub.azure.com))
