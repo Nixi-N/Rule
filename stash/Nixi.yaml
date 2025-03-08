@@ -1,9 +1,11 @@
 mode: rule
 log-level: silent
+
 mixed-port: 7890
 allow-lan: true
 bind-address: '*'
 external-controller: 127.0.0.1:9090
+
 subscribe-url: 订阅链接
 proxy-providers:
   秒连云:
@@ -16,6 +18,7 @@ proxy-providers:
     interval: 10800
     benchmark-url: http://cp.cloudflare.com/generate_204
     benchmark-timeout: 5
+
 dns:
   enable: true
   listen: 0.0.0.0:1053
@@ -27,6 +30,7 @@ dns:
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.dns.sb/dns-query
+
   fake-ip-filter:
     - '*.lan'
     - '*'
@@ -51,6 +55,7 @@ dns:
     - +.10099.com.cn
   follow-rule: null
   skip-cert-verify: null
+
 proxy-groups:
   - name: Google&Microsoft
     type: select
@@ -66,6 +71,7 @@ proxy-groups:
     hidden: null
     lazy: true
     interval: 420
+
   - name: Telegram
     type: select
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Telegram.png
@@ -74,6 +80,7 @@ proxy-groups:
     hidden: null
     lazy: true
     interval: 420
+
   - name: Music&Videos
     type: select
     icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
@@ -88,6 +95,7 @@ proxy-groups:
     hidden: null
     lazy: true
     interval: 420
+
   - name: Nixi
     type: select
     icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/applewwdc23.png
@@ -102,6 +110,7 @@ proxy-groups:
     hidden: null
     lazy: true
     interval: 420
+
   - icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/stashflight.png
     name: 白山茶
     type: select
@@ -115,6 +124,7 @@ proxy-groups:
       - USA
     lazy: true
     interval: 420
+
   - name: Auto
     type: url-test
     filter: ^
@@ -125,6 +135,7 @@ proxy-groups:
     url: http://cp.cloudflare.com/generate_204
     include-all: true
     hidden: null
+
   - name: HKG
     type: url-test
     filter: "香港|港|HK|🇭🇰|(?i)Hong"
@@ -135,6 +146,7 @@ proxy-groups:
     url: http://cp.cloudflare.com/generate_204
     include-all: true
     hidden: true
+
   - name: TWN
     type: url-test
     filter: "台湾|台|TW|🇹🇼|(?i)Taiwan"
@@ -145,6 +157,7 @@ proxy-groups:
     url: http://cp.cloudflare.com/generate_204
     include-all: true
     hidden: true
+
   - name: JPA
     type: url-test
     filter: "日本|日|JP|🇯🇵|(?i)Japan"
@@ -155,6 +168,7 @@ proxy-groups:
     url: http://cp.cloudflare.com/generate_204
     include-all: true
     hidden: true
+
   - name: KOR
     type: url-test
     filter: "韩国|韩|KR|🇰🇷|(?i)Korea"
@@ -165,6 +179,7 @@ proxy-groups:
     url: http://cp.cloudflare.com/generate_204
     include-all: true
     hidden: true
+
   - name: SGP
     type: url-test
     filter: "新加坡|狮|SG|🇸🇬|(?i)Singapore"
@@ -175,6 +190,7 @@ proxy-groups:
     url: http://cp.cloudflare.com/generate_204
     include-all: true
     hidden: true
+
   - name: USA
     type: url-test
     filter: "美国|美|US|🇺🇸|(?i)States"
@@ -185,6 +201,7 @@ proxy-groups:
     url: http://cp.cloudflare.com/generate_204
     include-all: true
     hidden: true
+
 rules:
   - RULE-SET,广告,REJECT
   - RULE-SET,反劫持,REJECT
@@ -204,85 +221,101 @@ rules:
   - RULE-SET,ASN,DIRECT
   - GEOIP,cn,DIRECT
   - MATCH,白山茶
+
 rule-providers:
   Google:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Stash/Rules/Google.list
     format: text
+
   反劫持:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Hijacking/Hijacking.yaml
     format: yaml
+
   Microsoft:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Stash/Rules/Microsoft.list
     format: text
+
   GitHub:
     behavior: classical
     interval: 86400
     url: https://whatshub.top/rule/GitHub.rule
     format: yaml
+
   Apple:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Stash/Rules/Apple.list
     format: text
+
   LAN:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Stash/Rules/Lan.list
     format: text
+
   YouTube:
     behavior: classical
     interval: 86400
     url: https://whatshub.top/rule/YouTube.rule
     format: yaml
+
   Telegram:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/Nixi-N/Rule/refs/heads/main/stash/Telegram.rule
     format: yaml
+
   Tiktok:
     behavior: classical
     interval: 86400
     url: https://whatshub.top/rule/TikTok.rule
     format: yaml
+
   Spotify:
     behavior: classical
     interval: 86400
     url: https://whatshub.top/rule/Spotify.rule
     format: yaml
+
   Instagram:
     behavior: classical
     interval: 86400
     url: https://whatshub.top/rule/Instagram.rule
     format: yaml
+
   Twitter:
     behavior: classical
     interval: 86400
     url: https://whatshub.top/rule/Twitter.rule
     format: yaml
+
   Steam:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Stash/Rules/Steam.list
     format: text
+
   广告:
     behavior: classical
     interval: 86400
     url: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Stash/Rules/Ads_AWAvenue.list
     format: text
+
   ASN:
     behavior: classical
     interval: 86400
     url: https://whatshub.top/rule/ASN-lite.rule
     format: yaml
+
   AI:
     behavior: classical
-    format: text
     interval: 864000
     url: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Stash/Rules/AI.list
+    format: text
 proxies: []
